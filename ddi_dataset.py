@@ -22,6 +22,16 @@ class DDI_Dataset(ImageFolder):
     _DDI_download_link = "https://stanfordaimi.azurewebsites.net/datasets/35866158-8196-48d8-87bf-50dca81df965"
     """DDI Dataset.
 
+    Note: assumes DDI data is organized as
+        ./DDI
+            /images
+                /000001.png
+                /000002.png
+                ...
+            /ddi_metadata.csv
+
+    (After downloading from the Stanford AIMI repository, this requires moving all .png files into a new subdirectory titled "images".)
+
     Args:
         root     (str): Root directory of dataset.
         csv_path (str): Path to the metadata CSV file. Defaults to `{root}/ddi_metadata.csv`
